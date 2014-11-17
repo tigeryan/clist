@@ -16,7 +16,7 @@
 	<label for="regions">Search Regions<br />
 		<select name="regions" id="regions" multiple="multiple" size="5">
 			<cfloop index="x" list="#regions#">
-				<option value="#x#">#x#</option>
+				<cfoutput><option value="#x#">#x#</option></cfoutput>
 			</cfloop>
 		</select>
 	</label>
