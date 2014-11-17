@@ -1,0 +1,21 @@
+To do
+===================
+a users table with login
+ability to make a search private or public
+make user -> search lookup a database reference
+ability to set how often a search should be run
+
+
+In Email
+===================
+-ability to flag for follow-up
+-ability to forward to a friend
+-ability to browse recent emails via web interface
+
+
+Adding Searches
+====================
+-ability to select state / region
+-ability to select category
+-ability to set keywords
+-ability to set price range
