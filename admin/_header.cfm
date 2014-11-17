@@ -266,6 +266,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
+                    	<!---
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -277,6 +278,7 @@
                             </div>
                             <!-- /input-group -->
                         </li>
+                        --->
                         <li>
                             <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
@@ -292,6 +294,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <!---
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
@@ -361,6 +364,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        --->
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
