@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>CraigsList Search Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +51,8 @@
                 <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
-
+			
+			<!---
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -264,7 +262,7 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-
+			--->
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
