@@ -52,7 +52,7 @@
 									<p class="help-block">Select which users to send alerts to</p>
 									</div>
 
-									<button type="submit">Save URL</button>
+									<button type="submit" class="btn btn-outline btn-primary">Save URL</button>
 	
 									</form>
 								</div>
