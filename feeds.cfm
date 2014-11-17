@@ -83,7 +83,7 @@
 					#Replace(title_list,'^','<br />','ALL')#
 					</p>
 					#t_html#
-					<a href="http://sixfoottiger.com/rss/bookmarks.cfm?uguid=#GetUsers.uguid#">[view all bookmarks]</a>
+					<a href="http://sixfoottiger.com/clist/bookmarks.cfm?uguid=#GetUsers.uguid#">[view all bookmarks]</a>
 					</cfmail>
 				</cfloop>
 			</cfif>
