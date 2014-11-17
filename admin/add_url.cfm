@@ -1,3 +1,5 @@
+<cfinclude template="_header.cfm" />
+
 <cfquery name="getUsers" datasource="#request.dsn#">
 	SELECT *
 	FROM craigslist_users
@@ -34,3 +36,4 @@
 </form>
 
 
+<cfinclude template="_footer.cfm" />
