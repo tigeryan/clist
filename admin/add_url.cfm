@@ -34,7 +34,7 @@
 	
 									<div class="form-group">
 									<label for="regions">Search Regions</label>
-										<select name="regions" id="regions" multiple="multiple" size="5">
+										<select name="regions" id="regions" multiple="multiple" size="5" class="form-control">
 											<cfloop index="x" list="#regions#">
 												<cfoutput><option value="#x#">#x#</option></cfoutput>
 											</cfloop>
@@ -44,7 +44,7 @@
 									
 									<div class="form-group">
 									<label for="userid">Users</label>
-										<select name="userid" id="userid" multiple="multiple" size="5">
+										<select name="userid" id="userid" multiple="multiple" size="5" class="form-control">
 											<cfoutput query="getUsers">
 												<option value="#getUsers.userid#">#getUsers.email#</option>
 											</cfoutput>
