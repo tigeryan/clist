@@ -10,10 +10,12 @@
 	<cfset watch_list = "">
 	<cfset title_list = "">
 	<!---<cftry>--->
-		<p><cfoutput>#GetSearch.c_search#</cfoutput></p><cfflush>
+
 		<cfset feed = feedToQuery(#GetSearch.c_search#) />
 		<cfset feedQuery = feed.query />
 		
+		<p><cfoutput>#GetSearch.c_search# - #feedQuery.recordcount#</cfoutput></p><cfflush>
+
 		<cfsavecontent variable="html">
 		<cfset t_urlid = GetSearch.urlid>
 		<cfloop query="feedquery">
