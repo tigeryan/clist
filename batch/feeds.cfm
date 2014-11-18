@@ -3,6 +3,7 @@
 <cfquery name="GetSearch" datasource="#request.dsn#">
 	SELECT urlid, c_search, last_run
 	FROM craigslist_urls
+	WHERE active = 1
 </cfquery>
 
 <cfloop query="GetSearch">
