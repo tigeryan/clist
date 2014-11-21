@@ -12,7 +12,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Existing CraigsList Searches
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -20,28 +20,23 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Search URL</th>
+                                            <th>Last Run</th>
+                                            <th>Active?</th>
+                                            <th>Users</th>
+                                            <th>Options</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <cfoutput query="getURLS">
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
+                                            <td>#getURLS.c_search#</td>
+                                            <td>#DateFormat(getURLS.last_run,"mm/dd/yy hh:mm tt")#</td>
+                                            <td>#getURLS.active#</td>
+                                            <td class="center">USERS</td>
+                                            <td class="center">[[edit]]</td>
                                         </tr>
-                                        <tr class="even gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 5.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">5</td>
-                                            <td class="center">C</td>
-                                        </tr>
+                                        </cfoutput>
                                     </tbody>
                                 </table>
                             </div>
