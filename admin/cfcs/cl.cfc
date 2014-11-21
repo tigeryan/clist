@@ -8,7 +8,7 @@
         <cfquery name="getUsers" datasource="#variables.dsn#">
             SELECT email
             FROM craigslist_users INNER JOIN craigslist_url_users ON craigslist_users.userid = craigslist_url_users.userid
-            WHERE userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+            WHERE craigslist_users.userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
             ORDER BY email
         </cfquery>
 
