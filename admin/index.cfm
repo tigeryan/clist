@@ -31,7 +31,7 @@
                                         <cfoutput query="getURLS">
                                         <tr class="odd gradeX">
                                             <td>#getURLS.c_search#</td>
-                                            <td>#DateFormat(getURLS.last_run,"mm/dd/yy hh:mm tt")#</td>
+                                            <td>#DateFormat(getURLS.last_run,"mm/dd/yyyy")# #TimeFormat(getURLS.last_run,"hh:mm tt")#</td>
                                             <td>#getURLS.active#</td>
                                             <td class="center">USERS</td>
                                             <td class="center">[[edit]]</td>
