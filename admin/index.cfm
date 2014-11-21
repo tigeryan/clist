@@ -6,6 +6,7 @@
     ORDER BY c_search
 </cfquery>
 
+<cfset cl = new cfcs.cl() />
 
 
             <div class="row">
