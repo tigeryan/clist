@@ -24,8 +24,14 @@
 
         </cftransaction>
 
+        <cfloop list="#form.userid#" index="u">
 
+            <cfquery name="insertUser" datasource="#request.dsn#">
+                INSERT INTO craigslist_url_users(urlid, userid)
+                VALUES(#getID.id#,#u#)
+            </cfquery>
 
+        </cfloop>
 
     </cfloop>
 </cfif>
