@@ -3,7 +3,7 @@
  	<cfset variables.dsn = request.dsn />
 
  	<cffunction name="getUsers" displayname="getUsers" hint="get a list of users for a search url" output="false" returntype="query">
-        <cfargument name="urlid" type="integer" required="true" />
+        <cfargument name="urlid" type="number" required="true" />
 
         <cfquery name="getUsers" datasource="#variables.dsn#">
             SELECT email
