@@ -8,7 +8,21 @@
 
     <cfloop list="#form.regions#" index="x">
 
+        <cfset s_url = "http://#x#.craighslist.org#form.search_url#" />
 
+        <cftransaction>
+
+            <cfquery name="insertURL" datasource="#request.dsn#">
+                INSERT INTO craigslist_urls(c_search, active)
+                VALUES(<cfqueryparam cfsqltype="cf_sql_varchar" value="#s_url#" />,1)
+            </cfquery>
+
+            <cfquery name="getID" datasource="#request.dsn#">
+                SELECT MAX(urlid) as ID
+                FROM craigslist_urls
+            </cfquery>
+
+        </cftransaction>
 
 
 
