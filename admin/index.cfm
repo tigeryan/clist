@@ -1,13 +1,7 @@
 <cfinclude template="_header.cfm" />
 
-<cfquery name="getURLS" datasource="#request.dsn#">
-    SELECT urlid, c_search, last_run, active
-    FROM craigslist_urls
-    ORDER BY c_search
-</cfquery>
-
 <cfset cl = new cfcs.cl() />
-
+<cfset getURLS = cl.getURLS() />
 
             <div class="row">
                 <div class="col-lg-12">

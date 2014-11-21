@@ -15,4 +15,19 @@
         <cfreturn getUsers />
 	</cffunction>
 
+ 	<cffunction name="getURLS" displayname="getURLS" hint="get a list of url" output="false" returntype="query">
+
+        <cfquery name="getURLS" datasource="#request.dsn#">
+            SELECT urlid, c_search, last_run, active
+            FROM craigslist_urls
+            ORDER BY c_search
+        </cfquery>
+
+        <cfreturn getURLS />
+	</cffunction>
+
+
+
+
+
 </cfcomponent>
