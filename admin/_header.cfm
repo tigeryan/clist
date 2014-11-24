@@ -40,6 +40,20 @@
 
             $('[id^="active_"]').click(function () {
                 console.log('active click: ' + this.id);
+
+                var id = this.id;
+                id = id.split("_");
+                id = id[1];
+
+                $.ajax({
+                    type: "POST",
+                    url: "cfcs/cl.cfc?method=setActive",
+                    data: { urlid: id }
+                })
+                .done(function( msg ) {
+                    alert( "Data Saved: " + msg );
+                });
+
             });
 
         });
