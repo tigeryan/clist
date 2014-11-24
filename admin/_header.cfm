@@ -39,7 +39,7 @@
         $( document ).ready(function() {
 
             $('[id^="active_"]').click(function () {
-                console.log('active click');
+                console.log('active click: ' + this.id);
             });
 
         });
