@@ -51,7 +51,8 @@
                     data: { urlid: id }
                 })
                 .done(function( msg ) {
-                    alert( "Data Saved: " + msg );
+                    var obj = jQuery.parseJSON(msg);
+                    alert( "Data Saved: " + obj.active);
                 });
 
             });
