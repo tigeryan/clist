@@ -38,7 +38,7 @@
     <script>
         $( document ).ready(function() {
 
-            $('id^=active_').click(function () {
+            $('[id^="active_"]').click(function () {
                 console.log('active click');
             });
 
