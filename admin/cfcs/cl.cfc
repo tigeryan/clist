@@ -32,7 +32,7 @@
         <cfquery name="getURL" datasource="#request.dsn#">
             SELECT urlid, c_search, last_run, active
             FROM craigslist_urls
-            WHERE craigslist_url.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+            WHERE craigslist_urls.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
         </cfquery>
 
         <cfset return_val = "-1" />
