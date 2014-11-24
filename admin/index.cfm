@@ -28,7 +28,7 @@
                                         <tr class="odd gradeX">
                                             <td>#getURLS.c_search#</td>
                                             <td>#DateFormat(getURLS.last_run,"mm/dd/yyyy")# #TimeFormat(getURLS.last_run,"hh:mm tt")#</td>
-                                            <td>#getURLS.active#</td>
+                                            <td>#YesNoFormat(getURLS.active)#</td>
                                             <td class="center">#ValueList(getUsers.email,", ")#</td>
                                             <td class="center"><a href="edit_url.cfm?urlid=#getURLS.urlid#">[[edit]]</a></td>
                                         </tr>
