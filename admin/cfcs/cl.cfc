@@ -26,6 +26,35 @@
         <cfreturn getURLS />
 	</cffunction>
 
+ 	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive" output="false" returns="struct" access="remote">
+        <cfargument name="urlid" type="number" required="true" />
+
+        <cfquery name="getURL" datasource="#request.dsn#">
+            SELECT urlid, c_search, last_run, active
+            FROM craigslist_urls
+            WHERE craigslist_url.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+        </cfquery>
+
+        <cfset return_val = "-1" />
+
+        <cfif getURL.recordcount>
+
+            <cfquery name="updateURL" datasource="#request.dsn#">
+                UPDATE craigslist_urls
+                SET active = <cfif getURL.active EQ 1>0<cfelse>1</cfif>
+                WHERE craigslist_url.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+            </cfquery>
+
+            <cfif getURL.active EQ 1>
+                <cfset return_val = "0" />
+            <cfelse>
+                <cfset return_val = "1" />
+            </cfif>
+
+        </cfif>
+
+        <cfreturn { "active"=javaCast("int", return_val)} />
+	</cffunction>
 
 
 
