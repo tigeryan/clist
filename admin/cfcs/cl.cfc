@@ -42,7 +42,7 @@
             <cfquery name="updateURL" datasource="#request.dsn#">
                 UPDATE craigslist_urls
                 SET active = <cfif getURL.active EQ 1>0<cfelse>1</cfif>
-                WHERE craigslist_url.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+                WHERE craigslist_urls.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
             </cfquery>
 
             <cfif getURL.active EQ 1>
