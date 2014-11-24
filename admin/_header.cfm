@@ -52,7 +52,7 @@
                 })
                 .done(function( msg ) {
                     var obj = jQuery.parseJSON(msg);
-                    alert( "Data Saved: " + obj.active);
+                    alert( "Data Saved: " + obj);
                 });
 
             });
