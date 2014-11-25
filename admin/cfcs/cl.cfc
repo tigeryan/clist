@@ -56,7 +56,28 @@
         <cfreturn '[{"active":#return_val#}]' />
 	</cffunction>
 
+	<!--- DEMO SERIALIZER --->
+	<cffunction name="getGallery" access="remote" returnformat="plain" output="false">
 
+		<!--- , party_desc, last_updated --->
+		<cfquery name="getList" datasource="#request.dsn#">
+			SELECT party_main.partyid, party_main.party_title, CONCAT('http://www.bodiesbybean.com/images/gallery/',party_images.thumb_image) as thumb_image
+			FROM party_main inner join party_images on party_main.partyid = party_images.partyid AND party_images.cover_photo = 1
+			WHERE party_main.active = 1
+			ORDER BY party_main.party_title
+		</cfquery>
+
+		<cfscript>
+			serializer = new JsonSerializer()
+				.asInteger("partyid")
+				.asString("party_title")
+				.asString("thumb_image")
+			;
+		</cfscript>
+
+		<cfreturn serializer.serialize(getList) />
+	</cffunction>
+	<!--- END DEMO --->
 
 
 </cfcomponent>
