@@ -38,6 +38,8 @@
     <script>
         $( document ).ready(function() {
 
+			var obj;
+
             $('[id^="active_"]').click(function () {
                 console.log('active click: ' + this.id);
 
@@ -52,9 +54,9 @@
                 })
                 .done(function( msg ) {
 					console.log(msg);
-                    var obj = jQuery.parseJSON(msg);
+                    obj = jQuery.parseJSON(msg);
 					console.log(obj);
-					console.log(obj["active"]);
+					console.log(obj[0].active);
                     alert( "Data Saved: " + obj.active);
                 });
 
