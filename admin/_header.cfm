@@ -53,6 +53,7 @@
                 .done(function( msg ) {
 					console.log(msg);
                     var obj = jQuery.parseJSON(msg);
+					console.log(obj);
                     alert( "Data Saved: " + obj.active);
                 });
 
