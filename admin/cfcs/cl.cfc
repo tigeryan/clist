@@ -18,8 +18,8 @@
  	<cffunction name="getAllUsers" displayname="getAllUsers" hint="get a list of users" output="false" returntype="query">
 
         <cfquery name="getAllUsers" datasource="#variables.dsn#">
-            SELECT DISTINCT email
-            FROM craigslist_users INNER JOIN craigslist_url_users ON craigslist_users.userid = craigslist_url_users.userid
+            SELECT userid, email, uguid
+            FROM craigslist_users
             ORDER BY email
         </cfquery>
 
