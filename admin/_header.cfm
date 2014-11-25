@@ -57,7 +57,7 @@
                     obj = jQuery.parseJSON(msg);
 					console.log(obj);
 					console.log(obj[0].active);
-                    alert( "Data Saved: " + obj.active);
+                    alert( "Data Saved: " + obj[0].active);
                 });
 
             });
