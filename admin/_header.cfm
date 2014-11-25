@@ -55,11 +55,11 @@
                 .done(function( msg ) {
                     obj = jQuery.parseJSON(msg);
 					if (obj[0].active ==1)
-						this.label = 'Yes';
+						$('#active_' + id).html('Yes');
 					else
-						this.label = 'No';
+						$('#active_' + id).html('No');
 
-                    alert( "Data Saved: " + obj[0].active);
+                    //alert( "Data Saved: " + obj[0].active);
                 });
 
             });
