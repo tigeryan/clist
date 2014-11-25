@@ -15,6 +15,17 @@
         <cfreturn getUsers />
 	</cffunction>
 
+ 	<cffunction name="getAllUsers" displayname="getAllUsers" hint="get a list of users" output="false" returntype="query">
+
+        <cfquery name="getAllUsers" datasource="#variables.dsn#">
+            SELECT DISTINCT email
+            FROM craigslist_users INNER JOIN craigslist_url_users ON craigslist_users.userid = craigslist_url_users.userid
+            ORDER BY email
+        </cfquery>
+
+        <cfreturn getAllUsers />
+	</cffunction>
+
  	<cffunction name="getURLS" displayname="getURLS" hint="get a list of url" output="false" returntype="query">
 
         <cfquery name="getURLS" datasource="#request.dsn#">
@@ -25,6 +36,19 @@
 
         <cfreturn getURLS />
 	</cffunction>
+
+ 	<cffunction name="getURL" displayname="getURL" hint="get a url" output="false" returntype="query">
+        <cfargument name="urlid" type="number" required="true" />
+
+        <cfquery name="getURL" datasource="#request.dsn#">
+            SELECT urlid, c_search, last_run, active
+            FROM craigslist_urls
+			WHERE craigslist_urls.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+        </cfquery>
+
+        <cfreturn getURL />
+	</cffunction>
+
 
  	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive"  returnformat="plain" output="false" access="remote">
         <cfargument name="urlid" type="number" required="true" />
