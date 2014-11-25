@@ -17,10 +17,10 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form method="post" action="edit_url_save.cfm" role="form">
-
+									<cfoutput>
+									<input type="hidden" name="urlid" value="#url.urlid#" />
 									<div class="form-group">
 									<label for="search_url">Search URL without region (i.e. /search/sss?query=mustang&format=rss)</label>
-									<cfoutput>
 									<input type="text" name="search_url" id="search_url" size="100" maxlength="255" value="#getURL.c_search#" />
 									</cfoutput>
 									<p class="help-block">Enter the URL that will be used for each region</p>
