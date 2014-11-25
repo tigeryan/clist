@@ -55,7 +55,7 @@
 		<cfargument name="userid" type="String" required="true" />
 
 		<cfquery name="updateURL" datasource="#request.dsn#">
-			UPDATE craigslist_url
+			UPDATE craigslist_urls
 			SET c_search = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.c_search#" />
 			WHERE urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
 		</cfquery>
