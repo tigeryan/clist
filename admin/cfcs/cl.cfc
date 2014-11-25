@@ -49,6 +49,33 @@
         <cfreturn getURL />
 	</cffunction>
 
+	<cffunction name="updateURL" output="false" returntype="string">
+		<cfargument name="urlid" type="number" required="true" />
+		<cfargument name="c_search" type="String" required="true" />
+		<cfargument name="userid" type="String" required="true" />
+
+		<cfquery name="updateURL" datasource="#request.dsn#">
+			UPDATE craigslist_url
+			SET c_search = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.c_search#" />
+			WHERE urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+		</cfquery>
+
+		<cfquery name="clearUsers" datasource="#equest.dsn#">
+			DELETE FROM craigslist_url_users
+			WHERE urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
+		</cfquery>
+
+		<cfloop list="#arguments.userid#" index="u">
+			<cfquery name="insertUser" datasource="#request.dsn#">
+				INSERT INTO craigslist_url_users(userid, urlid)
+				VALUES(<cfqueryparam cfsqltype="cf_sql_integer" value="#u#" />, <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />)
+			</cfquery>
+		</cfloop>
+
+		<cfreturn 1 />
+	</cffunction>
+
+
 
  	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive"  returnformat="plain" output="false" access="remote">
         <cfargument name="urlid" type="number" required="true" />
