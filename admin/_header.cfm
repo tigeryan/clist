@@ -51,6 +51,7 @@
                     data: { urlid: id }
                 })
                 .done(function( msg ) {
+					console.log(msg);
                     var obj = jQuery.parseJSON(msg);
                     alert( "Data Saved: " + obj);
                 });
