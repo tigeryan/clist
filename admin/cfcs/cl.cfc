@@ -6,7 +6,7 @@
         <cfargument name="urlid" type="number" required="true" />
 
         <cfquery name="getUsers" datasource="#variables.dsn#">
-            SELECT DISTINCT email
+            SELECT DISTINCT email, craigslist_users.userid
             FROM craigslist_users INNER JOIN craigslist_url_users ON craigslist_users.userid = craigslist_url_users.userid
             WHERE craigslist_url_users.urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
             ORDER BY email
