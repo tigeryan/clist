@@ -5,7 +5,7 @@
 
 <cfif getURL.recordcount>
 
-	<cfset cl.updateURL(form.c_search,form.userid) />
+	<cfset cl.updateURL(form.urlid, form.c_search,form.userid) />
 
 </cfif>
 
