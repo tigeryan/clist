@@ -53,7 +53,7 @@
 
         </cfif>
 
-        <cfreturn "{'active'=#javaCast('int', return_val)#}" />
+        <cfreturn "{active=#javaCast('int', return_val)#}" />
 	</cffunction>
 
 
