@@ -26,7 +26,7 @@
         <cfreturn getURLS />
 	</cffunction>
 
- 	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive" output="false" returns="struct" access="remote">
+ 	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive"  returnformat="plain" output="false" access="remote">
         <cfargument name="urlid" type="number" required="true" />
 
         <cfquery name="getURL" datasource="#request.dsn#">
