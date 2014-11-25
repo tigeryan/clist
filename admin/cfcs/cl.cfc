@@ -60,7 +60,7 @@
 			WHERE urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
 		</cfquery>
 
-		<cfquery name="clearUsers" datasource="#equest.dsn#">
+		<cfquery name="clearUsers" datasource="#request.dsn#">
 			DELETE FROM craigslist_url_users
 			WHERE urlid = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.urlid#" />
 		</cfquery>
