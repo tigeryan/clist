@@ -53,10 +53,12 @@
                     data: { urlid: id }
                 })
                 .done(function( msg ) {
-					console.log(msg);
                     obj = jQuery.parseJSON(msg);
-					console.log(obj);
-					console.log(obj[0].active);
+					if (obj[0].active ==1)
+						this.label = 'Yes';
+					else
+						this.label = 'No';
+
                     alert( "Data Saved: " + obj[0].active);
                 });
 
