@@ -83,7 +83,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">CraigsList Search ADmin</a>
             </div>
             <!-- /.navbar-header -->
 			
@@ -326,6 +326,12 @@
                                 <li>
                                     <a href="view_urls.cfm">View Existing Searches</a>
                                 </li>
+								<li>
+									<a href="users.cfm">Users</a>
+								</li>
+								<li>
+									<a href="bookmarks.cfm">Bookmarks</a>
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
