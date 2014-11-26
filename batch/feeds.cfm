@@ -10,7 +10,7 @@
 	<cfset email_send = "0">
 	<cfset watch_list = "">
 	<cfset title_list = "">
-	<!---<cftry>--->
+	<cftry>
 
 		<cfset feed = feedToQuery(#GetSearch.c_search#) />
 		<cfset feedQuery = feed.query />
@@ -92,19 +92,19 @@
 			</cfif>
 		</cfif>
 		
-		<cfquery name="Update" datasource="#request.dsn#">
-			UPDATE craigslist_urls
-			SET last_run = Now()
-			WHERE urlid = #GetSearch.urlid#
-		</cfquery>
-		
-		<!---<cfcatch type="any">
+		<cfcatch type="any">
 			<cfmail to="tigeryan55@gmail.com" from="jceci@sixfoottiger.com" subject="Craigslist ERROR - #GetSearch.urlid#" type="HTML">
 				#GetSearch.c_search#<br />
 				<cfdump var="#GetSearch#">
 				<cfdump var="#cfcatch#">
 			</cfmail>
 		</cfcatch>
-	</cftry>--->
-	
+	</cftry>
+
+	<cfquery name="Update" datasource="#request.dsn#">
+		UPDATE craigslist_urls
+		SET last_run = Now()
+		WHERE urlid = #GetSearch.urlid#
+	</cfquery>
+
 </cfloop>

@@ -100,6 +100,7 @@ Converts an RSS 0.9+, ATOM or RDF feed into a query.
         <cffile action="read" file="#path#" variable="XMLText">
     </cfif>
     
+	<cftry>
     <cfscript>
         nodeToReplace = mid(XMLText, 1, evaluate(find("?>", XMLText) + 1));
         XMLText = replaceNoCase(XMLText, nodeToReplace, "", "ALL");
@@ -208,6 +209,10 @@ Converts an RSS 0.9+, ATOM or RDF feed into a query.
             retStruct.query = retQuery;    
         }
     </cfscript>
+	<cfcatch type="any"></cfcatch>
+	</cftry>
+
+
     <cfreturn retStruct />
     
 </cffunction>
