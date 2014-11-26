@@ -93,11 +93,11 @@
 		</cfif>
 		
 		<cfcatch type="any">
-			<cfmail to="tigeryan55@gmail.com" from="jceci@sixfoottiger.com" subject="Craigslist ERROR - #GetSearch.urlid#" type="HTML">
+			<!---<cfmail to="tigeryan55@gmail.com" from="jceci@sixfoottiger.com" subject="Craigslist ERROR - #GetSearch.urlid#" type="HTML">
 				#GetSearch.c_search#<br />
 				<cfdump var="#GetSearch#">
 				<cfdump var="#cfcatch#">
-			</cfmail>
+			</cfmail>--->
 		</cfcatch>
 	</cftry>
 
