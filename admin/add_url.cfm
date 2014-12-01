@@ -1,8 +1,5 @@
-<cfquery name="getUsers" datasource="#request.dsn#">
-	SELECT *
-	FROM craigslist_users
-	ORDER BY email
-</cfquery>
+<cfset cl = new cfcs.cl() />
+<cfset getAllUsers = cl.getAllUsers() />
 
 <cfset regions = "cnj,delaware,jerseyshore,philadelphia,southjersey" />
 
@@ -36,8 +33,8 @@
 									<div class="form-group">
 									<label for="userid">Users</label>
 										<select name="userid" id="userid" multiple="multiple" size="5" class="form-control">
-											<cfoutput query="getUsers">
-												<option value="#getUsers.userid#">#getUsers.email#</option>
+											<cfoutput query="getAllUsers">
+												<option value="#getAllUsers.userid#">#getAllUsers.email#</option>
 											</cfoutput>
 										</select>
 									<p class="help-block">Select which users to send alerts to</p>
