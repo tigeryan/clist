@@ -19,5 +19,3 @@ Adding Searches
 -ability to select category
 -ability to set keywords
 -ability to set price range
-
-TEST EDIT

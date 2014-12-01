@@ -3,7 +3,7 @@
  	<cfset variables.dsn = request.dsn />
 
  	<cffunction name="getUsers" displayname="getUsers" hint="get a list of users for a search url" output="false" returntype="query">
-        <cfargument name="urlid" type="number" required="true" />
+        <cfargument name="urlid" type="numeric" required="true" />
 
         <cfquery name="getUsers" datasource="#variables.dsn#">
             SELECT DISTINCT email, craigslist_users.userid
@@ -38,7 +38,7 @@
 	</cffunction>
 
  	<cffunction name="getURL" displayname="getURL" hint="get a url" output="false" returntype="query">
-        <cfargument name="urlid" type="number" required="true" />
+        <cfargument name="urlid" type="numeric" required="true" />
 
         <cfquery name="getURL" datasource="#request.dsn#">
             SELECT urlid, c_search, last_run, active
@@ -50,7 +50,7 @@
 	</cffunction>
 
 	<cffunction name="updateURL" output="false" returntype="string">
-		<cfargument name="urlid" type="number" required="true" />
+		<cfargument name="urlid" type="numeric" required="true" />
 		<cfargument name="c_search" type="String" required="true" />
 		<cfargument name="userid" type="String" required="true" />
 
@@ -76,7 +76,7 @@
 	</cffunction>
 
 	<cffunction name="setActive" displayname="setActive" hint="set a URL as active or inactive"  returnformat="plain" output="false" access="remote">
-        <cfargument name="urlid" type="number" required="true" />
+        <cfargument name="urlid" type="numeric" required="true" />
 
         <cfquery name="getURL" datasource="#request.dsn#">
             SELECT urlid, c_search, last_run, active

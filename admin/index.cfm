@@ -24,7 +24,7 @@
                                     </thead>
                                     <tbody>
                                         <cfoutput query="getURLS">
-                                        <cfset getUsers = cl.getUsers(getURLS.urlid) />
+                                        <cfset getUsers = cl.getUsers(Val(getURLS.urlid)) />
                                         <tr class="odd gradeX">
                                             <td>#getURLS.c_search#</td>
                                             <td>#DateFormat(getURLS.last_run,"mm/dd/yyyy")# #TimeFormat(getURLS.last_run,"hh:mm tt")#</td>

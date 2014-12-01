@@ -324,7 +324,7 @@
                                     <a href="add_url.cfm">Add New Search</a>
                                 </li>
                                 <li>
-                                    <a href="view_urls.cfm">View Existing Searches</a>
+                                    <a href="index.cfm">View Existing Searches</a>
                                 </li>
 								<li>
 									<a href="users.cfm">Users</a>
